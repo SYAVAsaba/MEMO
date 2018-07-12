@@ -9,9 +9,16 @@ struct Node{
 	int key;
 	Info Graph;
 	struct Node *next;
+	/*struct Node *prev;*/ //双方向使うなら
 };
 
 typedef Node * NodePointer;
+
+NodePointer make_1node(int , NodePointer );
+NodePointer finditem(int );
+NodePointer insert(int ,NodePointer ); //普通のリスト作成
+NodePointer findnode(int);
+
 
 
 /*リスト関係の関数*/
@@ -25,6 +32,7 @@ NodePointer make_1node(int keydata, NodePointer p) {
 	}
 	n->key = keydata;
 	n->next = p;
+        n->prev = p;
 
 }
 
@@ -39,12 +47,21 @@ NodePointer finditem(int value) {
 }
 
 //ノードの挿入
-NodePointer insert(int keydata) {
+NodePointer insert(int keydata,NodePointer node) {
 	NodePointer newnode;
 
 	if (finditem(keydata) == NULL) {
-		newnode = make_1node(keydata, head->next);
-		head->next = newnode;
+		newnode = make_1node(keydata, node->next);
+		node->next = newnode;
+		//双方向ならこの下も
+		//newnode->prev = node;
+		/*双方向挿入タイプ(伝われ)ならこっち*/
+		/*
+		newnode->next = node->next;
+		newnode->next->prev = newnode;
+		node->next = newnode;
+		newnode->next = node;
+		*/
 
 		return newnode;
 	}
