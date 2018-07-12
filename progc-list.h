@@ -3,16 +3,15 @@
 typedef struct {
 	int hogehoge;
 	}
-}Info_Graph;
+}Info;
 
-typedef struct Node{
+struct Node{
 	int key;
-	Info_Graph Graph;
-	Node *next;
+	Info Graph;
+	struct Node *next;
 };
 
 typedef Node * NodePointer;
-
 
 
 /*リスト関係の関数*/
@@ -22,7 +21,6 @@ NodePointer head;
 NodePointer make_1node(int keydata, NodePointer p) {
 	NodePointer n;
 
-	if ((n = (NodePointer)malloc(sizeof(Node))) == NULL) {
 		exit(1);
 	}
 	n->key = keydata;
