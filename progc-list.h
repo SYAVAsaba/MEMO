@@ -58,7 +58,8 @@ NodePointer insert(int keydata,NodePointer node) {
 		/*双方向挿入タイプ(伝われ)ならこっち*/
 		/*
 		newnode->next = node->next;
-		newnode->next->prev = newnode;
+		if(newnode->next != NULL) newnode->next->prev = newnode;　
+		//if文は末尾に挿入する際の時のため、NULLの前にやる必要はない(そもそもNULLの前とか存在しない)
 		node->next = newnode;
 		newnode->next = node;
 		*/
