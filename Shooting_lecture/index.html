@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shooting game</title>
+    <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+</head>
+<canvas id="myCanvas" width="500" height="600"></canvas>
+
+<script type="text/javascript">
+    let scene = 0;
+    let scene_tmp = 1;
+    let stage;
+    let boss;
+    let bulletList = [];
+    let bg;
+    let shotCount = 0;
+    let gameOverText;
+    let gameClearText;
+    let stage1Text;
+    let stage2Text;
+    let stage3Text;
+    let stage4Text;
+    let stage5Text;
+    let isPressLeft = false;
+    let isPressRight = false;
+    let isPressUp = false;
+    let isPressDown = false;
+    let isPressShift = false;
+    let isPressZ = false;
+    let player;
+    let One_shot = 5;
+    let hp = 25;
+    let enemyShot = [];
+    let playerShot = [];
+    let i = 0;
+    let j;
+    let s = 0;
+    let titleText;
+    let howToText;
+    let pressSpaceText;
+    let judgeI = 1;
+    let judgeJ = 1;
+    let playerCount = 0;
+    let shotJudge = 0;
+    let HPstring;
+    //let GameOver;
+    //let Gameclear;
+
+</script>
+<body>
+<script src="class.js"></script>
+<script src="stage1.js"></script>
+<script src="stage2.js"></script>
+<script src="stage3.js"></script>
+<script src="stage4.js"></script>
+<script src="stage5.js"></script>
+<script src="Stage.js"></script>
+<script src="system.js"></script>
+<script src="handleKey.js"></script>
+<script src="initialize.js"></script>
+<script src="main.js"></script>
+
+
+</body>
+</html>
